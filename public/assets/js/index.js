@@ -75,11 +75,7 @@ const renderActiveNote = () => {
   }
 };
 
-const handleNoteSave = () => {
-  
-  const allNotes = getNotes()
-  console.log(allNotes);
-  
+const handleNoteSave = () => {  
   const newNote = {
     id: shortid.generate(),
     title: noteTitle.value,
@@ -98,7 +94,6 @@ const handleNoteDelete = (e) => {
 
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
-  console.log(`noteId: ${noteId}`);
 
   if (activeNote.id === noteId) {
     activeNote = {};
